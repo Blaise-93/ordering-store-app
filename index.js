@@ -1,5 +1,6 @@
 import { menuArray } from "./data.js"
 let orderArr = []
+const paymentEl = document.querySelector('#payment-form')
 
 // Event Listeners to listen to specific events by users
 
@@ -9,6 +10,12 @@ document.addEventListener('click', function(e){
     } 
     else if (e.target.dataset.remove) {
         removeProduct(e.target.dataset.remove)
+    }
+    else if(e.target.id === "confirm-btn") {
+        handlePaymentMade()
+    }
+    else if(e.target.id === ''){
+        
     }
 })
 
@@ -76,6 +83,28 @@ function getMenu(){
                     `
     })
     return menuHtml;
+}
+
+function handlePaymentMade() {
+    document.querySelector("#payment").classList.remove('hidden')
+}
+
+function completeOrderPurchase() {
+    paymentEl.addEventListener('submit', function(e) {
+        e.preventDefault()
+
+        document.getElementById('payment').classList.add('hidden')
+        
+        const paymentData = new FormData(paymentEl)
+        const name = paymentData.get('fullName')
+
+        document.getElementById('order').innerHTML = `
+            <div class="thank-you">
+                <h2>Thank you ${name}, your order is on its way!</h2>
+            </div>
+            `
+    })
+
 }
 
 function renderOrder() {

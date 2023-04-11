@@ -42,6 +42,18 @@
             </div>
         </div>
     </section>
+    <section class="payment hidden" id="payment">
+        <form id="payment-form">
+            <div class="payment-container">
+                <h2>Enter card details</h2>
+                <input type="text" name="fullName" placeholder="Enter your name" required>
+                <input type="text" name="cardNumber" placeholder="Enter card number" required>
+                <input type="password" name="cardCCV" placeholder="Enter CCV" required>
+                <button type="submit" class="payment-btn" id="payment-btn">Pay</button>
+            </div>
+        </form>
+    </section>
+
 	<script src="index.js" type="module"></script>
     </body>
 </html>
