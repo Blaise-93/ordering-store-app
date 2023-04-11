@@ -19,13 +19,23 @@ function addProduct(productId){
     })[0]
     orderArr.push(productItem)
     renderOrder()
+    calculateOrder()
 }
 
 function removeProduct(productIndex) {
     orderArr.splice(productIndex, 1) 
     renderOrder()
+    calculateOrder()
     
     
+}
+
+function calculateOrder() {
+    let totalOrder = 0
+    orderArr.forEach(function(orderProduct) {
+        totalOrder = orderProduct.price
+    })
+    document.querySelector('#total-price').innerHTML = "₦" + totalOrder
 }
 
 function getProduct() {
@@ -56,7 +66,7 @@ function getMenu(){
                         <div class="product-content">
                             <h2>${product.name}</h2>
                             <p class="product-ingredients">${product.ingredients}</p>
-                            <h3>$${product.price}</h3>
+                            <h3>₦${product.price}</h3>
                         </div>
                         <div class="product-btn">
                             <button class="add-btn" data-add="${product.id}">+</button>
