@@ -14,8 +14,8 @@ document.addEventListener('click', function(e){
     else if(e.target.id === "confirm-btn") {
         handlePaymentMade()
     }
-    else if(e.target.id === ''){
-        
+    else if(e.target.id === 'payment-btn'){
+        completeOrderPurchase()
     }
 })
 
@@ -40,7 +40,7 @@ function removeProduct(productIndex) {
 function calculateOrder() {
     let totalOrder = 0
     orderArr.forEach(function(orderProduct) {
-        totalOrder = orderProduct.price
+        totalOrder += orderProduct.price
     })
     document.querySelector('#total-price').innerHTML = "₦" + totalOrder
 }
