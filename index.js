@@ -7,7 +7,9 @@ document.addEventListener('click', function(e){
     if(e.target.dataset.add){
         addProduct(e.target.dataset.add)
     } 
-  
+    else if (e.target.dataset.remove) {
+        removeProduct(e.target.dataset.remove)
+    }
 })
 
 // Content functions
@@ -16,6 +18,30 @@ function addProduct(productId){
         return product.id == productId
     })[0]
     orderArr.push(productItem)
+    renderOrder()
+}
+
+function removeProduct(productIndex) {
+    orderArr.splice(productIndex, 1) 
+    renderOrder()
+    
+    
+}
+
+function getProduct() {
+    let productHtml = ``
+    orderArr.forEach(function(product, index) {
+        productHtml += `
+                    <div id="order-product" class="order-product">
+                        <div class="order-desc">
+                            <h2>${product.name}</h2>
+                            <button class="remove-btn" data-remove="${index}">Delete</button> 
+                        </div>                 
+                        <p>$${product.price}</p>
+                    </div>
+        `
+    })
+    return productHtml
 }
 
 
@@ -40,6 +66,16 @@ function getMenu(){
                     `
     })
     return menuHtml;
+}
+
+function renderOrder() {
+    document.getElementById('product-inner').innerHTML = getProduct()
+    if (orderArr.length > 0) {
+        document.querySelector('.order').classList.remove('hidden')
+    }
+    else {
+        document.querySelector('.order').classList.add('hidden')
+    }
 }
 
 function render(){
