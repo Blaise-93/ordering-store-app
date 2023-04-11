@@ -1,0 +1,176 @@
+*{
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+   
+} 
+
+.company-logo {
+    padding: 1rem 0;
+    background-image: url(images/pizza-burger.jpeg);
+    background-size:cover;
+    color: rgb(226, 221, 221);
+    box-shadow: 1px 0px 0px 4px whitesmoke;
+ 
+}
+
+.logo-info {
+   margin: 0 2rem;
+}
+
+#company-description {
+    margin-top: 0;
+    font-weight: 500;
+}
+#company-name {
+    margin: 0
+}
+.menu {
+    margin: 1rem 1.5em;
+
+}
+hr {
+    border: 1px solid #d2d2d2;
+    width: 85%;
+}
+
+p {
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Banner */
+.banner-heading, .banner-text {
+    color: #fff;
+    margin: 0;
+    text-align: justify;
+}
+
+.product-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 15px 25px;
+}
+
+/* Item */
+.product-img {
+    font-size: 70px;
+}
+
+.product-content {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 0.1;
+}
+
+.product-ingredients {
+    color: #8b8b8b;
+}
+
+/* Orders */
+.total, .order-product {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 30px;
+}
+
+.order-container-btn {
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+}
+
+.order-title {
+    text-align: center;
+}
+
+.order-desc {
+    display: flex;
+}
+
+
+/* Buttons */
+.add-btn {
+    border: 1px solid #dedede;
+    border-radius: 25px;
+    font-size: 25px;
+    background-color: #ffff;
+    padding: 10px 17px
+}
+
+.remove-btn {
+    border: none;
+    background-color: white;
+    color: #BBBBBB;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.confirm-btn, .payment-btn {
+    font-weight: 600;
+    border-radius: 5px;
+    border: none;
+    color: #ffff;
+    background-color: #16DB99;
+    padding: 15px 130px;
+}
+
+.payment-btn {
+    margin-top: 30px;
+}
+
+/* Payment */
+
+input {
+    margin: 7px;
+    padding: 10px 5px;
+    width: 80%;
+}
+
+.payment {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 350px;
+    height: 350px;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    box-shadow: 0 0 6px 3px #8b8b8b;
+}
+
+.payment-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Thank you */
+
+.thank-you {
+    border-radius: 5px;
+    background-color: #ECFDF5;
+    color: #065F46;
+    width: 84%;
+    padding: 10px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.payment-hr {
+    border: 1px solid black;
+}
